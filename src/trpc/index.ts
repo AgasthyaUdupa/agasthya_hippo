@@ -1,11 +1,8 @@
-import exp from "constants";
-import { publicProcedure, router } from "./trpc";
-import { type } from "os";
+import { authRouter } from "./auth-router";
+import { router } from "./trpc";
 
 export const appRouter = router({
-    anyApiRoute:publicProcedure.query(()=>{
-        return' hello'
+   auth:authRouter,
     })
-})
 
 export type AppRouter = typeof appRouter
